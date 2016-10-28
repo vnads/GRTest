@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GRTest.Services.Parsing
+namespace GRTest.Services
 {
     public class DelimitorSelector
     {

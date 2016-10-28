@@ -1,5 +1,5 @@
 ﻿using System;
-using GRTest.Services.Parsing;
+using GRTest.Services;
 using NUnit.Framework;
 
 namespace GRTest.UnitTests
