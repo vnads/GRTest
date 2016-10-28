@@ -3,7 +3,7 @@ using GRTest.Data.Models;
 
 namespace GRTest.Data.Interfaces
 {
-    interface IPersonRepository
+    public interface IPersonRepository
     {
         void CreatePerson(Person person);
 

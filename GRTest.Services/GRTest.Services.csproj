@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{233DC4F5-523B-45F0-AF2F-87F49B37ADA8}</ProjectGuid>
+    <ProjectGuid>{15A455CF-6269-402F-AD7C-A613BC836167}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GRTest.Data</RootNamespace>
-    <AssemblyName>GRTest.Data</AssemblyName>
+    <RootNamespace>GRTest.Services</RootNamespace>
+    <AssemblyName>GRTest.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,12 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="InMemory\InMemoryPersonRepository.cs" />
-    <Compile Include="Interfaces\IPersonRepository.cs" />
-    <Compile Include="Models\Gender.cs" />
-    <Compile Include="Models\Person.cs" />
+    <Compile Include="Parsing\DelimitorSelector.cs" />
+    <Compile Include="PersonImportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GRTest.Data\GRTest.Data.csproj">
+      <Project>{233dc4f5-523b-45f0-af2f-87f49b37ada8}</Project>
+      <Name>GRTest.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
