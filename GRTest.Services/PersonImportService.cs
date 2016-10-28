@@ -20,35 +20,43 @@ namespace GRTest.Services
             this._personRepository = repository;
         }
 
-        public void ImportPeople(string peopleData)
+        public IEnumerable<Person> ImportPeople(string peopleData)
         {
-            var delimiter = new char();
+            var delimiter = new DelimitorSelector().GetDelimiter(peopleData);
 
             var people = peopleData.Split(PERSON_SEPARATOR);
 
-            var exceptions = new List<Exception>(); //store here to throw later
+            var exceptions = new List<Exception>(); //store here to throw later, so one bad record doesn't spoil everything
 
             foreach (var person in people)
             {
                 try
                 {
-                    //we haven't declare the delimiter yet
-                    //for performance reasons, we'll run it on the first person so that it has a smaller set of data to read
-                    if (delimiter == default(char)) 
-                        delimiter = new DelimitorSelector().GetDelimiter(person);
-
                     var personFields = person.Split(delimiter);
+
+                    if(personFields.Length != 5)
+                        throw new Exception(); //handled in catch
+
                     //we're going to assume the correct order is always provided
                     _personRepository.CreatePerson(new Person
                     {
-
+                        LastName = personFields[0],
+                        FirstName = personFields[1],
+                        Gender = (Gender)Enum.Parse(typeof(Gender), personFields[2]),
+                        FavoriteColor = personFields[3],
+                        DateOfBirth = DateTime.Parse(personFields[4])
                     });
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     exceptions.Add(new InvalidDataException($"Invalid Person Record: {person}"));
                 }
             }
+
+            if(exceptions.Count > 0)
+                throw new AggregateException($"{exceptions.Count} error(s) occured. See inner exceptions for details.", exceptions);
+
+            return _personRepository.GetPeople();
         }
     }
 }

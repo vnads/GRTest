@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(GRTest.API.Startup))]
+//[assembly: OwinStartup(typeof(GRTest.API.Startup))]
 
 namespace GRTest.API
 {
@@ -12,7 +12,7 @@ namespace GRTest.API
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            //ConfigureAuth(app);
         }
     }
 }
