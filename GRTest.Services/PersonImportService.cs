@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using GRTest.Data.Interfaces;
-using GRTest.Data.Models;
+﻿using GRTest.Data.Interfaces;
 
 namespace GRTest.Services
 {
@@ -21,7 +17,7 @@ namespace GRTest.Services
 
         public void ImportPeople(string data)
         {
-            //var people = ParsePeople(data);
+            var people = new PersonParsingService().ParsePeopleData(data);
 
 
         }

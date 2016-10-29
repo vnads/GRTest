@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DelimitorSelectorTests.cs" />
+    <Compile Include="InMemoryPersonRepositoryTests.cs" />
     <Compile Include="PersonParsingServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

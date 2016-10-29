@@ -6,16 +6,21 @@ namespace GRTest.Data.InMemory
 {
     public class InMemoryPersonRepository : IPersonRepository
     {
-        public static IList<Person> DataStore = new List<Person>(); // this is the data store for in-memory "persistence"
+        private static readonly List<Person> DataStore = new List<Person>(); // this is the data store for in-memory "persistence"
 
-        public void CreatePerson(Person person)
+        public void AddPeople(IEnumerable<Person> people)
         {
-            DataStore.Add(person);
+            DataStore.AddRange(people);
         }
 
         public IEnumerable<Person> GetPeople()
         {
-            return DataStore;
+            return new List<Person>(DataStore);
+        }
+
+        public void ClearDataStore()
+        {
+            DataStore.Clear();
         }
     }
 }

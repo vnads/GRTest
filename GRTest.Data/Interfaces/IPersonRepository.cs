@@ -5,7 +5,7 @@ namespace GRTest.Data.Interfaces
 {
     public interface IPersonRepository
     {
-        void CreatePerson(Person person);
+        void AddPeople(IEnumerable<Person> people);
 
         IEnumerable<Person> GetPeople();
     }

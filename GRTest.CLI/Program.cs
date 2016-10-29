@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 
 namespace GRTest.CLI
 {
@@ -10,6 +8,7 @@ namespace GRTest.CLI
     {
         static void Main(string[] args)
         {
+            var directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         }
     }
 }
