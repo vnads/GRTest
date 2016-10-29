@@ -50,13 +50,26 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GRTest.Data\GRTest.Data.csproj">
+      <Project>{233dc4f5-523b-45f0-af2f-87f49b37ada8}</Project>
+      <Name>GRTest.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GRTest.Services\GRTest.Services.csproj">
       <Project>{15a455cf-6269-402f-ad7c-a613bc836167}</Project>
       <Name>GRTest.Services</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Content Include="Data\commas.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\pipes.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\spaces.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

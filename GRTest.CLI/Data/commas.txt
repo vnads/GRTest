@@ -1,0 +1,5 @@
+Pippen, Scottie, Male, Red, 10/25/1965
+Franklin, Aretha, Female, White, 3/25/1942
+Grant, Horace, Male, Black, 7/4/1965
+Stone, Joss, Female, Purple, 4/11/1987
+
