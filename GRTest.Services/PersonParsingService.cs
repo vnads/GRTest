@@ -10,13 +10,13 @@ namespace GRTest.Services
 {
     public class PersonParsingService
     {
-        private const string PERSON_SEPARATOR = "\r\n"; //ASSUMPTION: \n = new person
+        
 
         public IEnumerable<Person> ParsePeopleData(string data)
         {
             var delimiter = new DelimitorSelector().GetDelimiter(data);
 
-            var peopleData = data.Split(new[] { PERSON_SEPARATOR}, StringSplitOptions.RemoveEmptyEntries);
+            var peopleData = data.Split(new[] { Constants.PERSON_SEPARATOR}, StringSplitOptions.RemoveEmptyEntries);
 
             var people = new List<Person>();
 

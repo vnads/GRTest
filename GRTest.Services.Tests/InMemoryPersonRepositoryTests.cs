@@ -5,7 +5,7 @@ using GRTest.Data.InMemory;
 using GRTest.Data.Models;
 using NUnit.Framework;
 
-namespace GRTest.UnitTests
+namespace GRTest.Services.Tests
 {
     [TestFixture]
     class InMemoryPersonRepositoryTests

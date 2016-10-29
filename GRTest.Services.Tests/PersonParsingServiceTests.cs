@@ -2,10 +2,9 @@
 using System.IO;
 using System.Linq;
 using GRTest.Data.Models;
-using GRTest.Services;
 using NUnit.Framework;
 
-namespace GRTest.UnitTests
+namespace GRTest.Services.Tests
 {
     [TestFixture]
     public class PersonParsingServiceTests
