@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="DelimitorSelector.cs" />
+    <Compile Include="Interfaces\IPersonService.cs" />
     <Compile Include="PersonService.cs" />
     <Compile Include="PersonParsingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

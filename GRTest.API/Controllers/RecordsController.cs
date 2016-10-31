@@ -4,13 +4,14 @@ using System.Web.Http;
 using GRTest.API.Models;
 using GRTest.Data.InMemory;
 using GRTest.Services;
+using GRTest.Services.Interfaces;
 
 namespace GRTest.API.Controllers
 {
     public class RecordsController : ApiController
     {
         //normally I'd use an IoC container / DI tool here, but for simplicity's sake, I'm hard-coding it
-        private readonly PersonService _personService = new PersonService(new InMemoryPersonRepository());
+        private readonly IPersonService _personService = new PersonService(new InMemoryPersonRepository());
 
         [HttpPost]
         [Route("records")]

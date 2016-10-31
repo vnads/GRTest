@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using GRTest.Data.Interfaces;
 using GRTest.Data.Models;
+using GRTest.Services.Interfaces;
 
 namespace GRTest.Services
 {
-    public class PersonService
+    public class PersonService : IPersonService
     {
 
         private readonly IPersonRepository _personRepository;
